@@ -1,24 +1,114 @@
-* { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; overflow: hidden; }
+
+/* Áp dụng cho tất cả phần tử */
+* {
+    box-sizing: border-box;
+}
+
+/* Thiết lập trang */
+html,
 body {
-  display: flex; align-items: center; justify-content: center;
-  background: radial-gradient(circle at 50% 30%, #2b1d6b, #0c0824);
-  font-family: "Trebuchet MS", Arial, sans-serif;
-  touch-action: none; user-select: none; -webkit-user-select: none;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
 }
-#wrap { position: relative; }
-canvas { display: block; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,.6); touch-action: none; }
+
+/* Giao diện nền chính */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: radial-gradient(
+        circle at 50% 30%,
+        #2b1d6b,
+        #0c0824
+    );
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    /* Tắt thao tác mặc định khi chơi game */
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Khung chứa game */
+#wrap {
+    position: relative;
+}
+
+/* Canvas hiển thị game */
+canvas {
+    display: block;
+    border-radius: 16px;
+
+    /* Tạo bóng đổ */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+
+    touch-action: none;
+}
+
+/* Lớp phủ menu, tạm dừng và kết thúc game */
 #overlay {
-  position: absolute; inset: 0; border-radius: 16px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  background: rgba(12, 8, 40, .75); color: #fff; text-align: center; padding: 20px;
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    border-radius: 16px;
+
+    background: rgba(12, 8, 40, 0.75);
+    color: #fff;
+    text-align: center;
 }
-#overlay.hidden { display: none; }
-#title { font-size: 40px; margin: 0 0 10px; text-shadow: 0 3px 0 #5a189a; }
-#text { font-size: 18px; line-height: 1.6; white-space: pre-line; margin: 0 0 24px; }
+
+/* Ẩn lớp phủ khi không cần hiển thị */
+#overlay.hidden {
+    display: none;
+}
+
+/* Tiêu đề trên lớp phủ */
+#title {
+    margin: 0 0 10px;
+    font-size: 40px;
+    text-shadow: 0 3px 0 #5a189a;
+}
+
+/* Nội dung hướng dẫn hoặc thông báo */
+#text {
+    margin: 0 0 24px;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    /* Giữ các dòng xuống hàng trong nội dung */
+    white-space: pre-line;
+}
+
+/* Nút bắt đầu, tiếp tục hoặc chơi lại */
 #btn {
-  font: bold 22px "Trebuchet MS", Arial, sans-serif; color: #fff; cursor: pointer;
-  padding: 12px 36px; border: 0; border-radius: 30px;
-  background: linear-gradient(#ff7eb3, #e63946); box-shadow: 0 5px 0 #9d0208;
+    padding: 12px 36px;
+    border: 0;
+    border-radius: 30px;
+
+    font: bold 22px "Trebuchet MS", Arial, sans-serif;
+    color: #fff;
+    cursor: pointer;
+
+    /* Màu nền chuyển sắc */
+    background: linear-gradient(#ff7eb3, #e63946);
+
+    /* Tạo hiệu ứng nút nổi */
+    box-shadow: 0 5px 0 #9d0208;
 }
-#btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #9d0208; }
+
+/* Hiệu ứng khi nhấn nút */
+#btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #9d0208;
+}
+
