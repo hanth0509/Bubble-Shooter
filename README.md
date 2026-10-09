@@ -4,7 +4,7 @@
 Game bắn bóng màu 2D: bắn bóng lên lưới, nối từ 3 bóng cùng màu trở lên để phá. Có 5 level, combo, hiệu ứng và âm thanh.
 
 ## 2. Công nghệ
-HTML5 + CSS3 + JavaScript thuần, vẽ bằng Canvas 2D, âm thanh bằng Web Audio API. Không framework, không backend, không asset ngoài.
+HTML5 + CSS3 + JavaScript thuần, vẽ bằng Canvas 2D, âm thanh bằng Web Audio API. 
 
 ## 3. Cách chạy
 Mở `index.html` bằng trình duyệt (không cần server).
